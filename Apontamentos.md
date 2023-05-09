@@ -227,8 +227,99 @@ True
 
 igual '=' é o operador de atribuição mais conhecido 
 
-Analise a figura retirada do vs code, como as variaveis são preenchidas (atraves de valores atribuidos) e como a lista é preenchida
-![Markdown Preview](image.jpg)
+Analise a figura retirada do vs code, como as variaveis são preenchidas (atraves de valores atribuidos) e como a lista é preenchida.
 
+
+![Markdown Preview](./exerciciosEstudo/image.jpg)
+
+Note como as linhas 3 e 7 funcionam de igual forma.
+
+Da mesma forma que as linhas 11 e 14 produzem o mesmo resultado.
+
+Também a multiplicação e a divisão podem ser usadas através do mesmo método (analisar linhas 21 e 27)
+
+Assim como o resto da divisão (módulo) (analisar linha 34)e a divisão com resultado inteiro (linha 48).
+
+Operadores de Atribuição : "=" , "+=" , "-=" , "*=" , "/=" , "%=" , "**=" , "//="
+
+De facto o operador de atribuição é o ‘=‘ que pode ser associado a todos os operadores aritméticos.
+
+
+# Operadores Logicos
+
+Analise as tabelas de verdade
+
+
+![Markdown Preview](./exerciciosEstudo/tabelaverdade.jpg)
+
+------------------------------------------------------------------------
+
+Operadores Logicos : 'and' , 'or' consideramos em python 0 '!=' como sendo o 'xor' e o 'not' como negação.
+
+Apenas como curiosidade existe a possibilidade de utilizar em python os operadres logicos 'bit a bit' . Neste caso consideramos o '&' ,     '|' , e '^' como sendo o 'and' o 'or' e 'xor' da relação bit a bit . Cuidado para não confundir...
+(NAO VAI SER USADA NESTA UC)
+
+![Markdown Preview](./exerciciosEstudo/image3.jpg)
+
+-----------------------------------------------------------------
+
+### Ex: Um aluno teve 16 na media dos testes e 12 faltas num total de 20 aulas. O aluno fica aprovado se e só se a sua media for maior que 9 e a % de faltas nao pode utrapassar os 20%.
+
+![Markdown Preview](./exerciciosEstudo/image4.jpg)
+
+--------------------------------------------------------------------------------------
+
+# Operadores Unários
+
+Um operador unário possui apenas um operando.
+
+Por exemplo para o efeito que é comum verificar-se , 'x++' que incrementava uma unidade à variavel 'x', em pyton pode fazer-se com 'x +=1 ', mas já não é um operador unário.
+
+++ ou - ou +- não incrementa nem decrementa valores, apenas servem para reforçar o operador aritmetico . O facto é que neste caso o '+' e o '-' é que são os operadores unários.
+
+Note que a partir da linha 5 não existem atribuiçõs pelo que nenhuma dessas linhas altera o conteudo das variaveis.
+
+
+![Markdown Preview](./exerciciosEstudo/image5.jpg)
+
+--------------------------------------------------------------------------------------------
+
+# Operadores Ternários
+
+Este operador ternário consista na aplicação de duas respostas possíveis respetivamente a uma variavel.
+
+No exemplo verifica-se uma concatenação que testa se o aluno é aprovado ou reprovado( as duas possibilidades possiveis) atraves da variavel 'aprovado'.
+
+Se a variavel for 'False' assume a primeira possibilidade, caos seja 'true' assume a segunda possibilidade.
+
+Outra forma será utilizar o operador ternário com o comando 'if'. Neste caso a primeira possibilidade fica antes do 'if' e a segunda condição depois do 'else'.
+
+
+![Markdown Preview](./exerciciosEstudo/image6.png)
+
+
+--------------------------------------------------------------------------------------------------
+
+# Outros operadores
+
+O operador "in" (operador de membro) serve para testar se determinado valor se encontra dentro de uma estrutura de dados complexa.
+
+Operador "is" (operador de indentidae) serve para testar se o conteudo de uma determinada estrutura de dados é o mesmo.
+
+Pode existir uma dificuldade em perceber a diferença entre o comportamento do 'is' numa estrutura de daos complexa e o comportamento do 'is' numa estrutura de dados simples.
+
+Porque o 'is' atua sobre o endereço de memória das estruturas de dados (linha 25,26,27 comparadas com as linhas 11 a 14).
+
+![Markdown Preview](./exerciciosEstudo/image7.jpg)
+
+--------------------------------------------------------------------------------------------------------
+
+O quadro em baixo explica o porquê da diferença . Percebe-se que a lista 'alunos2' tem um endereçamento de memória diferente das listas 'alunos' e 'alunos1' , por isso são 'objetos diferentes'.
+
+![Markdown Preview](./exerciciosEstudo/image8.jpg)
+
+--------------------------------------------------------------------------------------------------------
+
+# Modulos 'BUILTIN' e Ambito Global
 
 
