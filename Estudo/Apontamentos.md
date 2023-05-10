@@ -230,7 +230,7 @@ igual '=' é o operador de atribuição mais conhecido
 Analise a figura retirada do vs code, como as variaveis são preenchidas (atraves de valores atribuidos) e como a lista é preenchida.
 
 
-![Markdown Preview](./exerciciosEstudo/image.jpg)
+![Markdown Preview](./image.jpg)
 
 Note como as linhas 3 e 7 funcionam de igual forma.
 
@@ -250,7 +250,7 @@ De facto o operador de atribuição é o ‘=‘ que pode ser associado a todos 
 Analise as tabelas de verdade
 
 
-![Markdown Preview](./exerciciosEstudo/tabelaverdade.jpg)
+![Markdown Preview](./tabelaverdade.jpg)
 
 ------------------------------------------------------------------------
 
@@ -259,13 +259,13 @@ Operadores Logicos : 'and' , 'or' consideramos em python 0 '!=' como sendo o 'xo
 Apenas como curiosidade existe a possibilidade de utilizar em python os operadres logicos 'bit a bit' . Neste caso consideramos o '&' ,     '|' , e '^' como sendo o 'and' o 'or' e 'xor' da relação bit a bit . Cuidado para não confundir...
 (NAO VAI SER USADA NESTA UC)
 
-![Markdown Preview](./exerciciosEstudo/image3.jpg)
+![Markdown Preview](./image3.jpg)
 
 -----------------------------------------------------------------
 
 ### Ex: Um aluno teve 16 na media dos testes e 12 faltas num total de 20 aulas. O aluno fica aprovado se e só se a sua media for maior que 9 e a % de faltas nao pode utrapassar os 20%.
 
-![Markdown Preview](./exerciciosEstudo/image4.jpg)
+![Markdown Preview](./image4.jpg)
 
 --------------------------------------------------------------------------------------
 
@@ -280,7 +280,7 @@ Por exemplo para o efeito que é comum verificar-se , 'x++' que incrementava uma
 Note que a partir da linha 5 não existem atribuiçõs pelo que nenhuma dessas linhas altera o conteudo das variaveis.
 
 
-![Markdown Preview](./exerciciosEstudo/image5.jpg)
+![Markdown Preview](./image5.jpg)
 
 --------------------------------------------------------------------------------------------
 
@@ -295,7 +295,7 @@ Se a variavel for 'False' assume a primeira possibilidade, caos seja 'true' assu
 Outra forma será utilizar o operador ternário com o comando 'if'. Neste caso a primeira possibilidade fica antes do 'if' e a segunda condição depois do 'else'.
 
 
-![Markdown Preview](./exerciciosEstudo/image6.png)
+![Markdown Preview](./image6.png)
 
 
 --------------------------------------------------------------------------------------------------
@@ -310,16 +310,223 @@ Pode existir uma dificuldade em perceber a diferença entre o comportamento do '
 
 Porque o 'is' atua sobre o endereço de memória das estruturas de dados (linha 25,26,27 comparadas com as linhas 11 a 14).
 
-![Markdown Preview](./exerciciosEstudo/image7.jpg)
+![Markdown Preview](./image7.jpg)
 
 --------------------------------------------------------------------------------------------------------
 
 O quadro em baixo explica o porquê da diferença . Percebe-se que a lista 'alunos2' tem um endereçamento de memória diferente das listas 'alunos' e 'alunos1' , por isso são 'objetos diferentes'.
 
-![Markdown Preview](./exerciciosEstudo/image8.jpg)
+![Markdown Preview](./image8.jpg)
 
 --------------------------------------------------------------------------------------------------------
 
 # Modulos 'BUILTIN' e Ambito Global
+
+
+Numa primeira abordagem o python carrega para o ambito global variaveis e funçoes que vao sendo utilizadas ao longo de cada sessao/programa.
+
+A funçao 'dir' permite verificar qual o ambito global de uma detrminada 'sessao'/programa num determinado momento.
+
+No primeiro exemplo verifica-se poucos 'elementos' , mas à medida que o software vai evluindo relativamente às execuções que fazem este 'Ambito 
+Global' vai aumentando no numero de elementos (ver exemplo 2)
+
+No exemplo 2, verifca-se que a variavel 'a' foi adicionada à lista.
+
+![Markdown Preview](./image9.jpg)
+
+----------------------------------------------------------------------------------------------------------
+
+O pyhton assente sobre uma estrutura modelar. E como estrutura modelar , possiblita a incorporação de modulos de acordo com as necessidades de momento quer podem variar de programa a programa.
+
+Existe um modulo chamado '__builtin__' , que ao repararem na imagem anterior conseguem visualizar a sua presença no 'Ambito Global' , precisamente porque foi carregado com o própio python.
+
+O comando 'dir' mostra os recursos de cada modulo. Utilizando o 'dir' sem argumentos 'dir()' , visualizam-se os recursos do ' Ambito Global' que é dinamico . Então pode-se perguntar :
+
+### Porque é que não aparece o comando 'dir'?
+
+ R: porque o comando dir encontra-se no modulo '__builtin__' entre muitos outros comandos.
+
+
+![Markdown Preview](./image10.jpg)
+
+----------------------------------------------------------------------------------------------------------
+
+
+Escreva uma linha 'import math' . Obviamente que este comando irá importar o modulo 'math' , um modulo com mias funçoes matematicas.
+
+Agora pretende-se verificar o conteudo desse modulo.
+
+![Markdown Preview](./image11.jpg)
+
+
+Na imagem , os recursos do modulo 'math'
+
+Fica claro então que o comando 'dir' pode receber um argumento que representa o modulo que se pretende ver o seu conteudo .
+
+--------------------------------------------------------------------------------------------------------------
+
+# Conversões entre tipos de dados
+
+A função 'type' serve para identificar o tipo de dados das estruturas de dados.
+
+Pode ser utilizada com o print.
+
+<Ex: print(x, type(x))
+
+![Markdown Preview](./image12.jpg)
+
+------------------------------------------------------------------------------------------------------------------
+
+![Markdown Preview](./image13.jpg)
+
+Regras de concatenação:
+
+- So pode concatenar 'str' com 'str', nao pode 'int' com 'str'
+- Nao posso mudar uma 'str' com decimais para int .
+- So pode concatenar 'str' com 'str', nao pode 'bool' com 'str'
+
+--------------------------------------------------------------------------------------------------------------------
+
+Neste exemplo vêm-se vários tipos de dados e comportamento do Python nas conversões implícitas e explicitas entre os diversos tipos de dados.
+
+A Linha 8 produz o seguinte resultado: note-se que as variáveis x e y são do tipo ‘str’ e as variáveis z e w são do tipo ‘int’ e ‘float’respetivamente.
+No entanto a aparência do output não reflete essas diferenças.
+
+A Linha 9 aparentemente reflete duas somas. Mas não se tratam de duas somas, a primeira (x+y) é uma concatenação e a segunda uma operação aritmética precisamente porque a primeira diz respeito a duas variáveis do tipo ‘str’ e a segunda diz respeito a duas variáveis numéricas que apesar de serem tipos difentes ‘int’ e ‘float’, são ambas numéricas e o Python não margem para dúvidas que pode utilizar uma conversão implícita para poder somar neste caso as variáveis z e w. 
+
+A linha 10 acusa um erro, pois tenta concatenar tipo de dados ‘str’ (x) com um tipo de dados ‘float’ (w).
+
+Esta situação deixa margem para dúvidas porque tanto se pode fazer uma concatenação como se poderia querer fazer uma soma. Então o Python deixa que o programador torne explicita a sua intenção, sugerindo que se faça a conversão que se pretende.
+
+A linha 11 não tem qualquer problema pois é uma soma com o mesmo tipo de dados dos operandos.
+
+Então fica claro que o Python privilegia sempre o explicito sobre o implícito no que diz respeito a eventuais conversões que possam vir a ser necessárias.
+
+As conversões explicitas deverão ser sempre feitas com o tipo de dados que se pretende obter seguido do valor ou variável entre parenteses. 
+Ver linhas 13, 15, 17, 25, etc…
+
+### É possivel converter str com decimais para int, se primerio convertermos para float e dps para int. EX: str = "10.6" --> float = 10.6 --> int = 10 
+
+------------------------------------------------------------------------------------------------------
+
+# Tipos de Dados Inteiro e Float
+
+
+Como já referido o conando 'dir' serve para visualizar o conteudo de um modulo .
+Veja o resultado de dir(int) na imagem abaixo.
+
+![Markdown Preview](./image14.jpg)
+
+
+<br>
+
+Agora o resultado de dir(float) na imagem abaxio.
+
+![Markdown Preview](./image15.jpg)
+
+<br>
+
+Qualquer tipo de dados conjugado com um float , o resultado dessa operação será sempre do tipo 'float', excluindo funções/operações que forçem o contrário.
+
+x=100
+y=10.563
+
+print (x*y ,"\n" , x/y,"\n" , x+y ,"\n", x-y ,"\n" ,x/x)
+
+Para verificar se um determinado dado é inteiro ,pode-se utilizar a funçao 'is_integer()' .
+
+EX: Verifique se as variaveis 'x' e 'y' são inteiros ou não:
+
+print(x.is_integer())
+
+R: dá erro, porque a funçao is_integer() não existe para tipos 'int' só para tipos 'float'
+print(y.is_integer())
+
+R: False
+
+y=10.0
+
+print(y.is_integer())
+
+R: True   --> Se a variavel for float mas tiver '.0' é como se não existisse e conta como int.
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+No exemplo abaixo pode verificar-se que as funções disponiveis em cada uma dad funções (neste caso tipo de dados) podem utilizar-se de forma 'primária, tal como o própio Python utiliza.
+
+Utilizamos o tipo de dados int e associamos uma das funções disponiveis (dir(int)). No caso deste exemplo , temos uma função para a subtração '__sub__'
+, para a soma '__add__' , e para as potencias '__pow__' , todas admitindo dois parameteos de entrada.
+
+As duas primeiras para os operandos e a terceira tendo como dados de entrada a base e a potência . Este racicionio pode ser aplicado a todas as funções existentes em cada 'classe'.
+
+
+![Markdown Preview](./image16.jpg)
+
+-------------------------------------------------------------------------------------------------------------------------
+
+# Problemática de Precisão
+
+ A questão do 'form' e do 'import' será estudada mais á frente. AGORA NÃO
+
+ Apenas fique a saber que são funções que importam modulos .
+
+Neste caso importamos o modulo 'Decimal' e 'getcontext' que estão dentro do modulo 'decimal'.
+
+Se fizer dir(decimal) irá apresentar erro, pois foram os modulos 'Decimal' e 'getcontext' que foram importados do modulo 'decimal' e não o modulo 'decimal' completo.
+
+Se fizer 'import decimal' e depois dir(decimal) , irá verificar que existem esses dois modulos 'Decimal' e 'getcontext'.
+
+![Markdown Preview](./image17.jpg)
+
+-----------------------------------------------------------------------------------------------------------------
+
+Repare-se que uma simples divisão entre x e y neste caso apresentou uma pecisão de muitos numeros ,por questoes relacionadas com a performance e metodos de calculo matematico.
+
+Repare no caso da soma das variaveis z com y ,(122.30000000001) , é estarnho, mas relaciona-se precisamente com forma de linguagens de programação ligam a performance de resposta com a necessidade de precisão esse mesmo calculo.
+
+Mas existe uma possibilidade de 'acertar' essa precisão através do metodo 'getcontext().prec'  e da função 'decimal' , que apresenta a precisão até ao numero das casas decimais pretendidos, ver imagem abaixo.
+
+![Markdown Preview](./image18.jpg)
+
+--------------------------------------------------------------------------------------------------------------
+
+# Strings
+
+Existem muitas funções que podem utilizadas com o tipo de dados 'str'.
+Resultado de dir(str).
+
+![Markdown Preview](./image19.jpg)
+
+-----------------------------------------------------------------------------------------------------------
+
+Veja a string cidade.
+
+Em pyhton uma string é representada por 'str'.
+
+Uma string é um array? Porque cada caracter de uma detrminada string é um elemento de um array que é uma string.
+
+Assim como é possivel aceder a cada um dos caracters de uma determinada string (linha4), e até saber que comprimento a string tem (linha 3).
+Para o efeito usaram-se as funções 'len' e 'array[x]' em que 'x' é o indice do array, partindo do principio que o indice começa no 0.
+
+No entanto apesar de se afirmar que uma string é um array, este tipo de dados não aceita poder ser alterado a partir dos elementos, como de um array se trata,(linha5).
+
+![Markdown Preview](./image20.jpg)
+
+-----------------------------------------------------------------------------------------------------------
+
+Sugere-se algum cuidado na utilização das aspas simples e aspas duplas. Apesar de poder utilizar qualquer uma delas no python , pode geral alguma confusão (e até erro) quando se utilizam aspas que se querem mesmo como parte integrante do texto.
+
+As linhas 6 e 9 representam uma utilização valida das aspas simples e duplas em conjunto.
+
+Imagine que queria imprimir a mensagem :“Nota da semana ‘D’el re’ :Festa no “Castelo.” Como faria?
+
+Podem-se utilizar caracteres de escape (‘\’) para incluir mais aspas das que foram utilizadas como aspas da string (exemplos nas linhas 10 e 11).
+
+Perceb-se também que o símbolo ‘\’ funciona também para partir o texto apenas no editor, ficando continuo na apresentação do seu output 
+(linhas 6 e 8).
+
+![Markdown Preview](./image21.jpg)
+
+-------------------------------------------------------------------------------------------------------------
 
 

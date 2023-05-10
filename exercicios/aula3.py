@@ -1,7 +1,7 @@
 #Modulo 
 
-import Modulo1
-import Modulo2
+import exercicios.Modulo1 as Modulo1
+import exercicios.Modulo2 as Modulo2
 
 print('Modulo : ', __name__)
 

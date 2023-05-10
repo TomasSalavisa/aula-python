@@ -48,3 +48,8 @@
 # Valor = 'bem disposto'
 # print('Trata-se de um aluno ' +Valor + '.')
 
+x=100
+y=10.0
+
+
+print(y.is_integer())
