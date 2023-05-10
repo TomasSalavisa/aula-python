@@ -530,3 +530,202 @@ Perceb-se também que o símbolo ‘\’ funciona também para partir o texto ap
 -------------------------------------------------------------------------------------------------------------
 
 
+Quando se pretende partir uma string por questões estéticas de visualização da string no editor , não se pode partir simplesmente a linha como no exemplo abaixo.
+
+Pode para esse efeito utilizar a tecnica das 3 aspas, usar 3 aspas dupas ou simples (""" , ''') como no exemplo representado nas linhas 3 a 6.
+
+![Markdown Preview](./image22.jpg)
+
+---------------------------------------------------------------------------------------------------------------
+
+Já se referiu que se pode extrair caracters de uma string tal como num array, 'a=array[indice].
+
+Veja a string cidade.
+Para imprimir a string, linha 2,
+Para imprimir a string usando os indices da mesma, linha3,
+Para imprimir o primeiro elemento da string, linha 5 e 6,
+Para imprimir o comprimento da linha , linha 7,
+
+<br>
+
+Analisando a figura(linha6) e o gráfico , percebe-se que a string percebe que os seus elementos têm duplo sentido. Da esquerda para a direita a começar do 0 .... 25, e da direita para a esquerda a começar no -1.....26.
+
+![Markdown Preview](./image23.jpg)
+
+-----------------------------------------------------------------------------------------------------------------
+
+Utilizando os ':' , pode-se percorrer os elementos iterativamente desde o incio ao fim, ou como já referido ser possivel do fim para o inicio. (com o sinal negativo ), linhas 9 a 10.
+
+Tambem se pode percorrer a string entre limites , por exemplo desde o caracter 'R' até ao caracter 'S', linhas 11 e 12.
+
+Percebe-se assim o ':' divide os limites dos elementos, como se à esquerda do ':' fosse 0 'de' e à direita do ':' fosse o ao .
+Então [5:13]  e [-21:-14] é da posição 5 a posição 13 e da posição -21 a posição -14.
+
+Reparar que quando trabalhamos com numeros positivos, a ultima posição NÃO conta(por causa do 0) , neste caso não acaba no -14 mas sim no -15 , (linhas 11 e 12).
+
+Ainda podemos fazer um 'step' de 2 posições usando o '::' , aplica-se também aos dois sentidos com a mesma tecnica ('-') , (linhas 14 a 16)
+
+![Markdown Preview](./image24.jpg)
+
+-------------------------------------------------------------------------------------------------------------------
+
+Pode-se verificar se um determinado caracter ou um conjunto de carcters existe numa string através da função ('in') (particular atençao ao 'case sensitive') ,ver figura abaixo.
+Naturalmente que também se pode utilizar o 'not in' para verificar se o(s) caractere(s) existe(m) na string.
+
+Ja verificamos que a funçao 'len' determina o numero de caracteres de uma estrutura de dados, neste caso o comprimento em caracteres da variavel 'cidade' que é 26.
+
+Já os metodos 'upper()' e 'lower()' convertem a string para letras maisculas ou minusculas respetivamente, tal como apresentado na imagem abaixo.
+
+![Markdown Preview](./image25.jpg)
+
+
+EX : 
+
+Faça com que se exiba no ecrã através da função ‘in’ a existência dos caracteres ‘REAL’ (sem utilizar o operador ‘not’).
+
+
+print(cidade[4:9].upper())
+
+R: REAL
+
+-------------------------------------------------------------------------------------------------------------------
+
+# Modulos
+
+Existem várias bibliotecas que podem ser utilizadas em Python. Essas bibliotecas (módulos) contêm diversos métodos (funções) com muita utilidade e nas mais variadas áreas, por exemplo na matemática nós utilizamos o módulo 'math'.
+
+Em Python para utilizar esses módulos utiliza-se o comando 'import' seguido do nome da biblioteca que se quer importar, por exemplo no caso da biblioteca 'math' faz-se: 
+
+![Markdown Preview](./image26.jpg)
+
+Para utilizar os métodos do modulo basta colocar o nome do módulo seguido de um '.'  e o vscode irá mostrar todos os métodos disponíveis no módulo. 
+Basta selecionar o método pretendido e usar o mesmo com os respeito(s) parâmetro(s). 
+
+Por exemplo no caso da raiz quadrada :
+
+![Markdown Preview](./image27.jpg)
+
+----------------------------------------------------------------------------------------------------------------------
+
+Se fizer print(dir()) verifica quais sao os modulos e atributos que o python está a usar no momento. Repare que depois de utilizarmos o modulo 'math' o comando 'dir' mostrou-o também.
+
+![Markdown Preview](./image28.jpg)
+
+
+----------------------------------------------------------------------------------------------------------------------
+
+## No entanto se quisermos apenas usar um dos métodos do módulo math, por exemplo método ‘sqrt’ devermos utilizar o comando:
+
+
+![Markdown Preview](./image29.jpg)
+
+## Ao fazer “print(dir())” irá verificar que em vez do módulo ‘math’ o Python apenas disponibiliza o método ‘sqrt’:
+
+
+![Markdown Preview](./image30.jpg)
+
+## Nota: naturalmente que desta forma ao utilizar o método ‘sqrt’ não necessita utilizar o ‘math.sqrt’, basta apenas utilizar o ‘sqrt(x)’ . Para remover o sqrt, fazer del sqrt.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+Para intender o modulo '__name__' , vamos escrever 3 codigos.
+
+### Codigo A /Modulo 1
+<br>
+
+import math 
+
+c= math.sqrt(81)
+
+print('Modulo : ', __name__)
+<br>
+
+### Codigo B /Modulo 2
+
+<br>
+
+
+import math 
+
+c= math.sqrt(9)
+
+print('Modulo : ', __name__)
+
+<br>
+
+### Codigo C /Modulo 3
+
+import exercicios.Modulo1 as Modulo1
+import exercicios.Modulo2 as Modulo2
+
+print('Modulo : ', __name__)
+
+print(Modulo1.c)
+print(Modulo2.c)
+
+<br>
+
+
+Se executar o programa Codigo A, verá que o print indica que o “__name__” é : “__main__”
+Se executar o programa Codigo B, verá que o print indica que o “__name__” é : “__main__”
+
+Se executar o programa Codigo C, verá que o ‘__name__’ continua = ‘__main__’, no entanto os módulos que são importados Codigo A e Codigo B,assumem o ‘__name__’ de ‘Modulo 1’ e ‘Modulo 2’ respetivamente. 
+Isto porque são módulos importados pelo programa Codigo C que é quem tem agora o ‘__name__’ igual a ‘__main__’.
+
+<br>
+
+### Resultado do codigo C /Modulo 3:
+
+<br>
+
+Modulo :  Modulo1
+<br>
+Modulo :  Modulo2
+<br>
+Modulo :  __main__
+<br>
+9.0
+<br>
+3.0
+
+-------------------------------------------------------------------------------------------------------------------
+
+## Exercicio 
+
+Com os conhecimentos que já adquiriu (pode consultar os apontamentos).Tente programar em Python o teorema de Pitágoras 
+(Atribua os valores que entender a ‘a’ e ’b’).
+
+from math import sqrt
+
+<br>
+a= 10
+<br>
+b=10
+<br>
+c= sqrt(a**2 + b**2)
+
+<br>
+print( "O cateto de a : ", str(a) + "\nO cateto de b :", str(b) + "\na hipotenusa de c :", str(c))
+
+<br>
+
+### Agora com input de utilizador 
+
+from math import sqrt
+
+<br>
+
+a = float(input("O cateto de a : "))
+<br>
+b = float(input("O cateto de b : "))
+<br>
+c= sqrt(a**2 + b**2)
+
+<br>
+
+print("A hipotenusa de c : ",c)
+
+-------------------------------------------------------------------------------------------------------------------
+
+
