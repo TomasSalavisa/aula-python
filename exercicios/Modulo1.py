@@ -2,9 +2,9 @@
 
 import math 
 
-c= math.sqrt(81)
-
-print('Modulo : ', __name__)
+if __name__ == "main":
+	c= math.sqrt(81)
+	print('Modulo : ', __name__)
 
 
 
