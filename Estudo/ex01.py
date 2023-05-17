@@ -1,4 +1,4 @@
-# pi =3, 14
+# pi = 3, 14
 
 # print(pi, type(pi))
 
@@ -80,7 +80,9 @@
 # c= sqrt(a**2 + b**2)
 
 
-# print("A hipotenusa de c : ",c)
+# print("A hipotenusa de c : ", c)
+
+# print(a+b)
 
 
 # prompt = str(input("Da me uma frase : "))
@@ -88,4 +90,12 @@
 # replace = prompt.replace(' ', '...')
 
 # print(replace)
+
+
+# x = float(input("Whats x : "))
+# y = float(input("Whats y: "))
+
+# z = round(x+y) # arredonda ao proximo numero inteiro
+
+# print(f"{z:,}") # poe uma virgula a cada 3 numeros. EX : 1000 -> 1,000
 

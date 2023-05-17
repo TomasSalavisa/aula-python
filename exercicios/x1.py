@@ -1,6 +1,7 @@
-def CalcularNota() :
+#Codigo Meu
+
+def CalcularNota(nota) :
 	 
-	nota = int(input("Introduza a sua nota : "))
 	
 	if  19 <= nota <= 20:
 		print("Elevado")
@@ -22,10 +23,37 @@ def CalcularNota() :
 
 
 if __name__ == "__main__" :
-	CalcularNota()
+	nota = int(input("Introduza a sua nota : "))
+	notaFinal = CalcularNota(nota)
+	print(CalcularNota(nota))
 	
 
+#Codigo do Professor
 
+# def converter_Nota_Quantitativa(nota):
+# 	nota = float(nota)
+# 	if nota > 20 or nota <0 :
+# 		return "Nota Incorreta"
+# 	elif nota >= 19 :
+# 		return "Elevado"
+# 	elif nota >= 17:
+# 		return "Muito Bom"
+# 	elif nota >= 14:
+# 		return "Bom"
+# 	elif nota >= 10:
+# 		return "Suficiente"
+# 	elif nota >= 7:
+# 		return "Insuficiente"
+# 	elif nota >= 3:
+# 		return "Mau"
+# 	else:
+# 		return "Muito Mau"
+
+
+# if __name__ == "main":
+# 	nota = input("Nota: ")
+# 	nota_convertida = converter_Nota_Quantitativa(nota)
+# 	print(nota_convertida)
 
 	
 
