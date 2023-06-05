@@ -729,3 +729,39 @@ print("A hipotenusa de c : ",c)
 -------------------------------------------------------------------------------------------------------------------
 
 
+# Funções sem retorno
+
+As funções sem retorno definem-se a partir da palavra "def" do Python.
+
+Neste caso a função não retorna valor nenhum (O print não é transportado pela função, é apenas uma instrução dentro da função. Por isso diz-se também que esta função é um procedimento).
+
+Este procediemento recebe dois valores (fator1 e fator2). Estes valores chamam-se argumentos da função / procedimento. Os argumentos so têm signifcado dentro da função
+
+Igualmente à instrução "if" a função é delimitada no seu dominio através da identação.
+
+![Markdown Preview](./image31.jpg)
+
+A estrutura de uma funçaõ é definida pro um nome, pode ter ou não parametros , um processamento e pode ter ou não um retorno.
+
+Para chamar uma função em pyhton, invocar o nome da função (se for o caso com os respetivos parametros linha.13)
+
+Repare no pormenor das linhas 11 e 12, utilizaram uma conversão explicita para garantir que o valor dos "input" sejam do tipo inteiro , caso contrário poderia afetar a linha 7.
+
+A função só vai ser executada se a execução pertencer ao "main" .
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+# Funções com retorno 
+
+Funções com retorno são iguais aos procedimentos, mas utilizam a palavra "return" para retomar uma determinado valor.
+
+Neste caso temos a função "calcular_produto()" que recebe dois parametros(fator1 e fator2) e devolvem um resultado(fator1 *fator2) para o exterior. 
+
+![Markdown Preview](./image31.jpg)
+
+-------------------------------------------------------------------------------------------------------------------
+
+	
+
+	
