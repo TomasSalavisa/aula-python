@@ -23,18 +23,36 @@ def ecra():
 	print("---------------------------------------------")
 
 
-def verifica_BD(nomeBD):
+def verifica_Base_Dados(nomeBd):
 	try:
-		baseBados = open(nomeBD, "r+")
-		baseBados.close
+		baseDados = open(nomeBd, 'r+')
+		baseDados.close
 		return True
 	except FileNotFoundError:
-		baseBados = open(nomeBD, "w+")
-		baseBados.close
-		print("Base de Dados não existia e foi criada....")
+		baseDados = open(nomeBd, 'w')
+		baseDados.close
+		print('A base de dados não existia e foi criada....')
 		return False
 
+
+
 def verifica_num_alunos(n):
+	ficheiro = open(BD(), "r")
+	linha = ficheiro.read()
+	ficheiro.close
+	contador = -1
+	found = -1
+	for registo in linha.splitlines():
+		x = registo.split(',')
+		contador += 1
+		if int(x[0]) == int(n):
+			found = contador
+			return found
+	return found
+
+
+
+def verifica_num_alunos1(n):
 	ficheiro = open(BD())
 	contador = -1
 	found = -1
@@ -48,18 +66,21 @@ def verifica_num_alunos(n):
 	ficheiro.close
 	return found
 
+
 def continuar():
 	input("Enter para continuar.....")
 
+
+
 def inserir_registo(wNumero=None, wNome=None, wEmail=None, wTelefone=None):
-	verifica_BD(BD())
+	verifica_Base_Dados(BD())
 
 	if wNumero is None:
 		print("---------------- NOVO REGISTO --------------------")
 		numero = int(input("Número de Aluno : "))
 	else:
 		numero = wNumero
-	if verifica_num_alunos(numero) == --1 and numero > 0:
+	if verifica_num_alunos1(numero) == --1 and numero > 0:
 		if wNumero is None:
 			nome = input("Nome do Aluno : ")
 			email = input("Email do Aluno: ")
@@ -82,13 +103,15 @@ def inserir_registo(wNumero=None, wNome=None, wEmail=None, wTelefone=None):
 	else:
 		print("Este numero ja foi adicionado")
 
+
+
 def eliminar_registo(perguntarAluno=None):
-	if not verifica_BD(BD()):
+	if not verifica_Base_Dados(BD()):
 		return
 	if perguntarAluno is not None:
 		n_Aluno = perguntarAluno
 	else:
-		n_Aluno = int(input("Numero de Aluno: "))
+		n_Aluno = int(input("Numero de Aluno?: "))
 		x= input("Deseja mesmo eliminar este Aluno? (s/n) : ")
 		if x != "s" and x != "S":
 			print("Operação Cancelada!")
@@ -106,17 +129,19 @@ def eliminar_registo(perguntarAluno=None):
 			if int(x[0]) == int(n_Aluno):
 				pass
 				if perguntarAluno is None:
-					print("Registo Eliminado!, Aluno Nº ", perguntarAluno)
+					print("Registo Eliminado!, Aluno Nº ", n_Aluno)
 			else:
 				ficheiro.write(registo + '\n')
 		ficheiro.close
 
+
+
 def consultar_registo(altera=None):
-	if not verifica_BD(BD()):
+	if not verifica_Base_Dados(BD()):
 		return
 	else:
 		n_Aluno = int(input("Numero de Aluno : "))
-		existe_aluno = verifica_num_alunos(n_Aluno)
+		existe_aluno = verifica_num_alunos1(n_Aluno)
 		if existe_aluno == -1:
 			print("Aluno não encontrado....")
 			return
@@ -138,15 +163,36 @@ def consultar_registo(altera=None):
 			ll[2] = input ("Aluno Email : ")
 			ll[3] = input ("Aluno Telefone : ")
 			eliminar_registo(n_Aluno)
-			inserir_registo(n_Aluno), ll[1], ll[2], ll[3]
+			inserir_registo(n_Aluno, ll[1], ll[2], ll[3])
 			print("Registo do Aluno Nº ", n_Aluno, "Alterado!")
 
 
 
-def eliminar_BD():
-	if not verifica_BD(BD):
+
+def listar_registo():
+	if not verifica_Base_Dados(BD()):
 		return
-	x = input("Atenção! Continuar esta operação significa apagar a Base de Dados. (s/n)")
+	else:
+		print("Listar todos os registos.")
+		ficheiro = open(BD(), "r")
+		linhas = ficheiro.readlines()
+		print("-------------------------------------Lista de Alunos----------------------------------")
+		print("Nº Aluno\t\tAluno\t\t\te-Mail\t\t\t\tTelefone")
+		print("--------------------------------------------------------------------------------------")
+		for line in linhas:
+			ll = line.split(",")
+			print(f"{ll[0]}\t\t\t{ll[1]}\t\t{ll[2]}\t\t\t{ll[3]}\t")
+		ficheiro.close
+
+
+
+
+
+def eliminar_BD():
+	if not verifica_Base_Dados(BD):
+		return
+	else:
+		x = input("Atenção! Continuar esta operação significa apagar a Base de Dados. (s/n)")
 	if x != "s" and x != "S":
 		print("Operação Cancelada!")
 		return
@@ -154,7 +200,31 @@ def eliminar_BD():
 	print("Ficheiro : ", BD(), "Removido!")
 
 
-eliminar_BD()
+
+
+
+opcaoMenu = 1
+
+while opcaoMenu in range(1,7):
+	ecra()
+	opcaoMenu = int(input("Qual a sua opção? "))
+	if opcaoMenu == 1:
+		inserir_registo()
+	elif opcaoMenu == 2:
+		consultar_registo(True)
+	elif opcaoMenu == 3:
+		eliminar_registo()
+	elif opcaoMenu == 4:
+		consultar_registo()
+	elif opcaoMenu == 5:
+		listar_registo()
+	elif opcaoMenu == 6:
+		eliminar_BD()
+	else:
+		print("Sair")
+	continuar()
+
+
 	
 
 
