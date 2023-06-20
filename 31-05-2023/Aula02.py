@@ -34,8 +34,6 @@ def verifica_Base_Dados(nomeBd):
 		print('A base de dados não existia e foi criada....')
 		return False
 
-
-
 def verifica_num_alunos(n):
 	ficheiro = open(BD(), "r")
 	linha = ficheiro.read()
@@ -49,8 +47,6 @@ def verifica_num_alunos(n):
 			found = contador
 			return found
 	return found
-
-
 
 def verifica_num_alunos1(n):
 	ficheiro = open(BD())
