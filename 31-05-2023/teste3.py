@@ -34,13 +34,47 @@
 # 	else:
 # 		print("Sair")
 # 	print()
-# 	print('Enter para continuar...')
+# # 	print('Enter para continuar...')
 
 
-dic = [{"Nome" : "Joao", "Idade": "21", "Sexo": "Macho"},
-	   {"Nome" : "Tomas", "Idade": "45", "Sexo": "Macho"},
-	   {"Nome" : "Miguel", "Idade": "81", "Sexo": "Gigachad"},
-	   {"Nome" : "Maria", "Idade": "17", "Sexo": "Female"},]
-for i in dic:
-	print(f'\nNome: {i["Nome"]} \nIdade: {i["Idade"]} \nSexo: {i["Sexo"]}')
+
+# dic = [{"Nome" : "Joao", "Idade": "21", "Sexo": "Macho"},
+# 	   {"Nome" : "Tomas", "Idade": "45", "Sexo": "Macho"},
+# 	   {"Nome" : "Miguel", "Idade": "81", "Sexo": "Gigachad"},
+# 	   {"Nome" : "Maria", "Idade": "17", "Sexo": "Female"},]
+# for i in dic:
+# 	print(f'\nNome: {i["Nome"]} \nIdade: {i["Idade"]} \nSexo: {i["Sexo"]}')
+
+# # meter os dados num dicionario
+
+# students = ()
+
+# with open ("students.csv") as file:
+# 	for line in file:
+# 		name, ouse = line.rstrip().split(",")
+# 		student = ("name" : name, "ouse: ", ouse)
+# 		students.append(student)
+
+# # sort os nomes no dicionario por nome
+
+# def get_name():
+# 	return student("name")
+
+# def get_ouse():
+# 	return student("osue")
+
+# for student in sorted(students, key=get_name): #for student in sorted(students, key=get_name, reverse=True):
+# 	print(f'(student("name") is in (student("ouse")) ')
+
+# troca o get_name por get_ouse se for para sort por ouse em vez de nome.
 	
+
+# dic = [{"Nome" : "Joao", "Idade": "21", "Sexo": "Macho"},
+# 	   {"Nome" : "Tomas", "Idade": "45", "Sexo": "Macho"},
+# 	   {"Nome" : "Miguel", "Idade": "81", "Sexo": "Gigachad"},
+# 	   {"Nome" : "Maria", "Idade": "17", "Sexo": "Female"},]
+
+# for i in enumerate(dic):
+# 	for m in dic:
+# 		print(f'\n{i} Nome: {m["Nome"]} Idade: {m["Idade"]} Sexo: {m["Sexo"]}')
+
