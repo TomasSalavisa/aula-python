@@ -99,3 +99,10 @@
 
 # print(f"{z:,}") # poe uma virgula a cada 3 numeros. EX : 1000 -> 1,000
 
+
+
+# for i in range(0,31,2):
+# 	print(f'\nNumero: {i}\n')
+# 	for m in range(0, i+1):
+# 		print(m, '', end='')
+# 	print()
