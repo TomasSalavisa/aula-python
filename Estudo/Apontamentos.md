@@ -762,6 +762,25 @@ Neste caso temos a função "calcular_produto()" que recebe dois parametros(fato
 
 -------------------------------------------------------------------------------------------------------------------
 
-	
+# IF/ELIF
 
-	
+As linhas 5 a 22 representam a função que converte a nota quantitativa em qualitativa. 
+A função "converter_nota_quantitativa(x)" recebe um valor que será convertido através de encadeamento de "if" e "else(elif)", e no fim devolve a conversão respetiva ("return").
+
+### Imagem página 43
+
+Da linha 25 para a frente, o programa usa um "if" para se certificar que se encontra ou não no mesmo modulo "main". Em caso afirmativo e só nesse caso é solicitado ao utilizador que introduza uma nota, a qual será utilizada na chamada da função de conversão.
+
+NA linha 9 utiliza-se um novo conceito (range) que serve para definir um intervalo entre (x e y), em que x pertence ao intervalo mas y não pertence. Se o numero não pertencer ao intervalo é considerado incorreto.
+
+# WHILE
+
+Tal como o xercicio sugere, deve-se utilizar o módulo "Random" e especificamente uma das suas funções "randint". Esta função serve para extração de numeros aleatórios.
+As linhas 5 a 13 estão comentadas, apenas para informar que tambem se poderia criar uma estrutura de dados da forma que se apresenta na linha 7, mas o exercicio obriga a privilegiar as estruturas "while".
+
+### Imagem página 51
+
+A linha 14 declara uma estrutura do tipo list vazia , para se poder utilizar o metodo "pop". 
+
+As linhas 15 a 18 inicializa uma varivael (y) para preencher a lista com os números do jogo sequencialmenete(1 a 90). Por isso inicializa-se com 0 e increemnta-se a variavel y através de um ciclo while enquanto o y for menor que 90. Este ciclo garante que quando começa o jogo a lista contém todas as bolas necessárias dosponiveis a aserem usadas.
+
