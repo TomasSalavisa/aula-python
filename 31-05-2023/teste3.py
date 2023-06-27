@@ -74,7 +74,6 @@
 # 	   {"Nome" : "Miguel", "Idade": "81", "Sexo": "Gigachad"},
 # 	   {"Nome" : "Maria", "Idade": "17", "Sexo": "Female"},]
 
-# for i in enumerate(dic):
-# 	for m in dic:
-# 		print(f'\n{i} Nome: {m["Nome"]} Idade: {m["Idade"]} Sexo: {m["Sexo"]}')
+# for m, i in enumerate(dic):
+# 	print(f'\nIndice: {m} \nNome: {i["Nome"]} \nIdade: {i["Idade"]} \nSexo: {i["Sexo"]}\n\n-------------------------')
 
